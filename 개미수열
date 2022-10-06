@@ -1,0 +1,56 @@
+using System;
+
+namespace Min
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("몇열까지 출력하시겠습니까: ");
+            int input = int.Parse(Console.ReadLine());
+            string[] s = new string[20];
+            s[0] = "1";
+            char check;
+            int cnt;
+            string result;
+            for (int i = 1; i < 20; i++)
+            {
+                check = s[i - 1][0];
+                cnt = 0;
+                result = "";
+                for (int k = 0; k < s[i - 1].Length; k++)
+                {
+                    if (s[i - 1][k] == check)
+                    {
+                        cnt += 1;
+                    }
+                    else
+                    {
+                        result = result + check + cnt;
+                        check = s[i - 1][k];
+                        cnt = 1;
+                    }
+
+
+
+
+                }
+                result = result + check + cnt;
+                s[i] = result;
+
+
+            }
+
+
+            for (int i = 0; i < input; i++)
+            {
+                Console.WriteLine((i+1)+"번째: "+s[i]);
+            }
+
+        }
+    }
+}
+
+
+
+
