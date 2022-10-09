@@ -1,0 +1,36 @@
+using System;
+namespace Min
+{
+    class Program
+    {
+        
+        static void Main(string[] args)
+        {
+            ConsoleKeyInfo cki;
+            int x = 1;
+            do
+            {
+
+                while (Console.KeyAvailable == false)
+                {
+                    Console.Clear();
+                    Console.SetCursorPosition(x, 5);
+                    if (x % 3 == 0)
+                        Console.Write("__@");
+                    else if (x % 3 == 1)
+                        Console.Write("_^@");
+                    else
+                        Console.Write("^_@");
+                    Thread.Sleep(500);
+                    x++;
+                }
+                    
+
+                cki = Console.ReadKey(true);
+                Thread.Sleep(3000);
+               
+            } while (x<100);
+        }
+
+    }
+}
