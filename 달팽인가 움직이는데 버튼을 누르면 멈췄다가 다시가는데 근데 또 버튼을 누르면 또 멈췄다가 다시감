@@ -8,8 +8,7 @@ namespace Min
         {
             ConsoleKeyInfo cki;
             int x = 1;
-            do
-            {
+            while(x<100){
 
                 while (Console.KeyAvailable == false)
                 {
@@ -29,7 +28,7 @@ namespace Min
                 cki = Console.ReadKey(true);
                 Thread.Sleep(3000);
                
-            } while (x<100);
+            }
         }
 
     }
